@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+
+  phonebook_backend:
+    container_name: phonebook_backend_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - phonebookdb
+
+  phonebookdb:
+    container_name: phonebookdb
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - phonebookdb:/var/lib/postgresql/data
+volumes:
+  phonebookdb:
+    driver: local
