@@ -101,6 +101,7 @@ The output should be like this:
   4 | 0029848289238  | Leonardo DiCaprio  | 9255 Sunset Blvd., Suite 615, West Hollywood, California 90069 United States | Leonardo@DiCaprio.com
 (4 rows)
 ```
+## Now, we can test our API using Postman:
 
 ## Add a new contact
 
